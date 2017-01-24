@@ -38,7 +38,16 @@
 				</select>
 			</div>
 		</form>
+		<hr>
+		<p>chapter 4</p>
+		<input type="text" v-model="didi" name="">
+		<input type="text" v-model="family" name="">
+		<br>
+		didi = {{didi}}, family = {{family}}, didiFamily = {{didiFamily}}
 	</div>
+	<my-directive class="hello" name="hi"></my-directive>
+	
+
 	<pre>
 		form: { 
 			name: {{form.name}},
@@ -71,7 +80,16 @@
 					{value:'keep running', tag: 3},
 					{value:'dress up', tag: 0},
 					{value:'love yourself', tag: 2}
-				]
+				],
+				didi: 1, // chapter 4
+				family: 2
+			}
+		},
+		computed () {
+			return {
+				didiFamily: function(){
+					return this.didi + this.family
+				}
 			}
 		}
 	}
